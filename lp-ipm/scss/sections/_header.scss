@@ -1,0 +1,30 @@
+.header {
+    min-height: 2.5rem;
+    display: grid;
+    background-color: #434343;
+
+    &__container {
+        display: flex;
+        justify-content: flex-end;
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+
+            a {
+                padding: 0.15rem;
+
+                &:hover,
+                &:focus {
+                    border-bottom: 2px solid var(--clr-accent-primary);
+                }
+            }
+            img {
+                width: 1rem;
+                aspect-ratio: 1.125/1.15;
+            }
+        }
+    }
+}

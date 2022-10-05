@@ -1,0 +1,61 @@
+.thanks {
+    display: grid;
+    min-height: calc(100vh - 2.5rem);
+
+    background-image: url("../images/hero__bg.png");
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-color: var(--clr-neutral-black);
+
+    @media (min-width: 70em) {
+        background-position: center;
+    }
+
+    .logo {
+        padding-top: 3.5rem;
+        margin-bottom: 6rem;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 3.5vw, 2.5rem);
+        line-height: 1.2;
+    }
+
+    p {
+        padding-block: 1.25rem;
+        max-width: 45ch;
+
+        @media (min-width: 50em) {
+            padding-block: 1.75rem;
+        }
+    }
+
+    h2 {
+        margin-top: 1rem;
+        font-size: clamp(1.5rem, 3.5vw, 1.75rem);
+        line-height: 1.4;
+    }
+
+    a {
+        margin-top: 2rem;
+        min-width: 20rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__container {
+        position: relative;
+    }
+
+    .shape {
+        position: absolute;
+        top: 10%;
+        left: 62%;
+        max-width: 5.75rem;
+
+        @media (max-width: 45em) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+.clients {
+    padding-block: var(--spacing);
+    overflow: hidden;
+    background-color: #272727;
+
+    p,
+    span {
+        color: var(--clr-neutral-gray-medium);
+    }
+
+    a {
+        margin-inline: auto;
+        display: grid;
+        max-width: 25rem;
+    }
+
+    h2 {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        max-width: max-content;
+
+        span {
+            color: var(--clr-neutral-white);
+            z-index: 2;
+        }
+
+        img {
+            max-width: 10rem;
+            margin-left: -2rem;
+        }
+    }
+
+    &__container {
+        display: grid;
+        gap: 2rem;
+
+        .content {
+            ul {
+                padding-bottom: 3rem;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                max-width: max-content;
+
+                @media (min-width: 45em) {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+
+                @media (min-width: 80em) {
+                    grid-template-columns: repeat(5, 1fr);
+                }
+
+                li {
+                    background-color: var(--clr-neutral-gray-medium);
+                    display: grid;
+                    place-items: center;
+                    border-radius: 8px;
+                    padding: 0.75rem;
+                    width: 8rem;
+                    aspect-ratio: 2/1.5;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            a {
+                margin-left: 0;
+                margin-right: auto;
+            }
+        }
+
+        .floating-image {
+            display: none;
+        }
+
+        @media (min-width: 70em) {
+            position: relative;
+
+            .floating-image {
+                position: absolute;
+                top: 1rem;
+                right: 0;
+                max-width: 8rem;
+                display: unset;
+            }
+        }
+    }
+}

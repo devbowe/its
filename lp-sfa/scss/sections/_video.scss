@@ -1,0 +1,45 @@
+.video {
+    padding-block: var(--spacing);
+    overflow: hidden;
+    position: relative;
+
+    .shape-left,
+    .shape-right {
+        display: none;
+    }
+
+    .container {
+        width: min(100%, 80rem);
+        position: relative;
+
+        @media (min-width: 45em) {
+            width: min(90%, 80rem);
+
+            .shape-left,
+            .shape-right {
+                display: unset;
+                position: absolute;
+                z-index: -1;
+                z-index: -1;
+                top: 17%;
+            }
+
+            .shape-left {
+                left: 0;
+            }
+
+            .shape-right {
+                right: 0;
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    iframe {
+        width: 100%;
+        max-width: 42.5rem;
+        // margin-inline: auto;
+        aspect-ratio: 16/9;
+        display: block;
+    }
+}

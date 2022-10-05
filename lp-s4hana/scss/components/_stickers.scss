@@ -1,0 +1,19 @@
+.stickers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+    margin-block: 3rem 4rem;
+
+    max-width: max-content;
+
+    img {
+        margin-bottom: 0 !important;
+        width: auto !important;
+    }
+
+    // @media (min-width: 45em) {
+    //     grid-template-columns: auto;
+    //     grid-auto-flow: column;
+    // }
+}

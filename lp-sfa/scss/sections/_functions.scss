@@ -1,0 +1,99 @@
+.functions {
+    padding-block: var(--spacing);
+
+    .gif {
+        position: relative;
+        right: -8px;
+    }
+
+    .grid {
+        padding-block: 3rem;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+
+        .item01,
+        .item03,
+        .item05 {
+            justify-self: end;
+        }
+
+        .item02,
+        .item04,
+        .item06 {
+            justify-self: start;
+        }
+
+        .gif {
+            grid-column: span 2;
+        }
+
+        article {
+            color: var(--clr-neutral-gray-medium);
+            font-size: 1rem;
+
+            display: grid;
+            gap: 1rem;
+            max-width: max-content;
+
+            img {
+                margin-inline: auto;
+            }
+
+            p {
+                max-width: 20ch;
+                margin-inline: auto;
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 45em) {
+            padding-block: 5rem;
+            grid-template-columns: 1fr 1.25fr 1fr;
+            align-items: center;
+            max-width: max-content;
+            margin-inline: auto;
+            column-gap: 3.25rem;
+            grid-template-areas:
+                "item01 gif item02"
+                "item03 gif item04"
+                "item05 gif item06";
+
+            .gif {
+                grid-area: gif;
+                grid-column: unset;
+                transform: rotate(5.25deg);
+
+                @media (min-width: 60em) {
+                    max-width: 25rem;
+                }
+            }
+
+            $items: (
+                ".item01": item01,
+                ".item02": item02,
+                ".item03": item03,
+                ".item04": item04,
+                ".item05": item05,
+                ".item06": item06,
+            );
+
+            @each $class, $index in $items {
+                #{$class} {
+                    grid-area: $index;
+                }
+            }
+        }
+
+        @media (min-width: 60em) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    a {
+        margin-inline: auto;
+        display: grid;
+        max-width: 20rem;
+        text-align: center;
+    }
+}

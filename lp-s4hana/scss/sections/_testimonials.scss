@@ -1,0 +1,69 @@
+.testimonials {
+    padding-block: var(--spacing);
+    background-color: #151515;
+
+    background-image: url("../images/shape-quote.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    a {
+        margin-inline: auto;
+        max-width: max-content;
+        display: grid;
+        min-width: 20rem;
+        margin-top: 3rem;
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    width: 100%;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    place-items: center;
+    padding-inline: 3rem;
+    color: #b1b1b1;
+    cursor: grab;
+
+    iframe {
+        width: min(100%, 35rem);
+        aspect-ratio: 16/9;
+    }
+
+    .depo {
+        margin-block: 3rem 1.5rem;
+        max-width: 70ch;
+        margin-inline: auto;
+    }
+
+    .name {
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: 600;
+        gap: 0.5rem;
+
+        &::before {
+            content: "";
+            width: 15px;
+            height: 1px;
+            background-color: currentColor;
+        }
+    }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    font-size: 3rem;
+    color: var(--clr-accent-primary) !important;
+}

@@ -1,0 +1,14 @@
+.footer {
+    background-color: #060606;
+    color: #878787;
+    padding-block: 1rem;
+
+    &__container {
+        display: grid;
+        place-items: center;
+
+        p {
+            font-size: 0.8rem;
+        }
+    }
+}

@@ -1,0 +1,129 @@
+.hero {
+    padding-block: var(--spacing);
+    background-color: #212121;
+
+    background-image: url("../images/hero__bg.png");
+    background-size: cover;
+    background-position: left;
+
+    @media (min-width: 45em) {
+        background-position: left;
+    }
+
+    // @media (min-width: 75) {
+    //     background-position: center;
+    // }
+
+    .content {
+        img {
+            margin-bottom: 4rem;
+            width: 13rem;
+        }
+
+        h1 {
+            font-size: clamp(1.75rem, 3.75vw, 2.15rem);
+            line-height: 1.3;
+            max-width: 22ch;
+        }
+
+        p {
+            max-width: 43ch;
+            margin-block: 1.75rem;
+            font-size: 1.125rem;
+        }
+
+        ul {
+            display: grid;
+            gap: 0.5rem;
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                position: relative;
+                padding-left: 1rem;
+
+                &::before {
+                    content: "";
+                    background-color: var(--clr-accent-primary);
+                    width: 6px;
+                    left: 0;
+                    aspect-ratio: 1;
+                    border-radius: 50%;
+                    flex-shrink: 0;
+                    position: absolute;
+
+                    top: 8px;
+                }
+            }
+        }
+    }
+
+    &__container {
+        display: grid;
+        gap: 3rem;
+    }
+
+    @media (min-width: 75em) {
+        position: relative;
+
+        &__container {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .form-wrapper {
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: var(--spacing);
+            max-width: 29rem;
+
+            &::after {
+                content: "";
+                background-color: #2f2f2f;
+                width: 100%;
+                height: 3rem;
+                display: block;
+                position: absolute;
+                bottom: -2rem;
+                left: 0;
+                right: 0;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                // display: none;
+            }
+
+            // background: rgba(47, 47, 47, 0.8);
+            // border-radius: 16px;
+            // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            // backdrop-filter: blur(8.8px);
+            // -webkit-backdrop-filter: blur(8.8px);
+            // border: 1px solid rgba(47, 47, 47, 0.3);
+        }
+    }
+
+    .form-wrapper {
+        @media (min-width: 1400px) {
+            left: 50%;
+
+            &::before {
+                content: "";
+                background-image: url("../images/shape-triangule.svg");
+                background-size: cover;
+
+                width: 5rem;
+                aspect-ratio: 1;
+                position: absolute;
+                display: block;
+                top: 4rem;
+                right: -2rem;
+                z-index: 9999999999;
+            }
+        }
+    }
+}

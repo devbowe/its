@@ -1,0 +1,125 @@
+.solutions {
+    padding-block: var(--spacing);
+    background-color: #222222;
+
+    &__container {
+        display: grid;
+        gap: 3rem;
+
+        h2 {
+            display: grid;
+            grid-auto-flow: column;
+            align-items: center;
+            max-width: max-content;
+
+            span {
+                color: var(--clr-neutral-white);
+                z-index: 2;
+                max-width: 19ch;
+                display: block;
+            }
+
+            img {
+                max-width: 10rem;
+                margin-left: -7rem;
+                display: none;
+            }
+
+            @media (min-width: 40em) {
+                img {
+                    display: unset;
+                }
+            }
+        }
+
+        p,
+        li {
+            color: #b1b1b1;
+        }
+
+        p {
+            margin-block: 1.5rem;
+            max-width: 55ch;
+        }
+
+        ul {
+            display: grid;
+            gap: 0.5rem;
+
+            li {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                position: relative;
+                padding-left: 1rem;
+
+                &::before {
+                    content: "";
+                    background-color: var(--clr-accent-primary);
+                    width: 6px;
+                    left: 0;
+                    aspect-ratio: 1;
+                    border-radius: 50%;
+                    flex-shrink: 0;
+                    position: absolute;
+
+                    top: 8px;
+                }
+            }
+        }
+
+        .image {
+            img {
+                margin-inline: auto;
+            }
+        }
+    }
+
+    @media (min-width: 45em) {
+        padding-block: 0;
+        position: relative;
+
+        &__container {
+            grid-template-columns: 1.25fr 1fr;
+            align-items: center;
+
+            .content {
+                padding-block: var(--spacing);
+            }
+
+            .image {
+                display: grid;
+                place-items: center;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 60%;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: 50% 50%;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 70em) {
+        &__container {
+            position: relative;
+
+            &::before {
+                content: "";
+                width: 1px;
+                height: 100%;
+                background-color: #5b5b5b;
+                position: absolute;
+                bottom: -13%;
+                left: -2rem;
+            }
+        }
+    }
+}
